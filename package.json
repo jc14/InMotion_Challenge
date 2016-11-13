@@ -1,0 +1,19 @@
+{
+  "name": "inmotionchallenge",
+  "version": "0.0.0",
+  "description": "Create a webpage that manages a home movie collection.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jc14/InMotion_Challenge.git"
+  },
+  "author": "Jordan Campbell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jc14/InMotion_Challenge/issues"
+  },
+  "homepage": "https://github.com/jc14/InMotion_Challenge#readme"
+}
