@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server/index.js",
-    "build": "browserify --entry client/app/app.js --outfile client/app/bundle.js"
+    "build": "browserify --entry client/app/app.js --outfile client/app/bundle.js",
+    "watch": "watchify --entry client/app/app.js --outfile client/app/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -29,5 +30,9 @@
     "lodash": "^4.16.6",
     "mongoose": "^4.6.7",
     "nodemon": "^1.11.0"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.1",
+    "watchify": "^3.7.0"
   }
 }
