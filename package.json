@@ -4,7 +4,9 @@
   "description": "Create a webpage that manages a home movie collection.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/index.js",
+    "build": "browserify --entry client/app/app.js --outfile client/app/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,17 @@
   "bugs": {
     "url": "https://github.com/jc14/InMotion_Challenge/issues"
   },
-  "homepage": "https://github.com/jc14/InMotion_Challenge#readme"
+  "homepage": "https://github.com/jc14/InMotion_Challenge#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "body-parser": "^1.15.2",
+    "browserify-middleware": "^7.1.0",
+    "chai": "^3.5.0",
+    "express": "^4.14.0",
+    "lodash": "^4.16.6",
+    "mongoose": "^4.6.7",
+    "nodemon": "^1.11.0"
+  }
 }
