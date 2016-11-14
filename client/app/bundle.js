@@ -7,11 +7,11 @@ angular.module('Site', ['ngRoute'])
   .config(($routeProvider, $locationProvider) => {
     $routeProvider
       .when('/', {
-        templateUrl: './views/home.html',
+        templateUrl: 'home.html',
         controller: 'HomeController'
       })
       .when('/test', {
-        templateUrl: './views/test.html',
+        templateUrl: 'test.html',
         controller: 'TestController'
       })
       .otherwise({
@@ -21,7 +21,23 @@ angular.module('Site', ['ngRoute'])
       $locationProvider.html5Mode(true);
   })
 
-},{"angular":7,"angular-animate":3,"angular-route":5}],2:[function(require,module,exports){
+  // Controller init
+  require('./controllers/HomeController.js')
+  require('./controllers/TestController.js')
+
+},{"./controllers/HomeController.js":2,"./controllers/TestController.js":3,"angular":9,"angular-animate":5,"angular-route":7}],2:[function(require,module,exports){
+angular.module("Site")
+  .controller("HomeController", function($scope, $http) {
+
+  })
+
+},{}],3:[function(require,module,exports){
+angular.module("Site")
+  .controller("TestController", function($scope, $http) {
+
+  })
+
+},{}],4:[function(require,module,exports){
 /**
  * @license AngularJS v1.5.8
  * (c) 2010-2016 Google, Inc. http://angularjs.org
@@ -4162,11 +4178,11 @@ angular.module('ngAnimate', [], function initAngularHelpers() {
 
 })(window, window.angular);
 
-},{}],3:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 require('./angular-animate');
 module.exports = 'ngAnimate';
 
-},{"./angular-animate":2}],4:[function(require,module,exports){
+},{"./angular-animate":4}],6:[function(require,module,exports){
 /**
  * @license AngularJS v1.5.8
  * (c) 2010-2016 Google, Inc. http://angularjs.org
@@ -5237,11 +5253,11 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 })(window, window.angular);
 
-},{}],5:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 require('./angular-route');
 module.exports = 'ngRoute';
 
-},{"./angular-route":4}],6:[function(require,module,exports){
+},{"./angular-route":6}],8:[function(require,module,exports){
 /**
  * @license AngularJS v1.5.8
  * (c) 2010-2016 Google, Inc. http://angularjs.org
@@ -37010,8 +37026,8 @@ $provide.value("$locale", {
 })(window);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],7:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":6}]},{},[1]);
+},{"./angular":8}]},{},[1]);

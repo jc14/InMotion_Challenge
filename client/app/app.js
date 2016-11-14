@@ -6,11 +6,11 @@ angular.module('Site', ['ngRoute'])
   .config(($routeProvider, $locationProvider) => {
     $routeProvider
       .when('/', {
-        templateUrl: './views/home.html',
+        templateUrl: 'home.html',
         controller: 'HomeController'
       })
       .when('/test', {
-        templateUrl: './views/test.html',
+        templateUrl: 'test.html',
         controller: 'TestController'
       })
       .otherwise({
@@ -19,3 +19,7 @@ angular.module('Site', ['ngRoute'])
 
       $locationProvider.html5Mode(true);
   })
+
+  // Controller init
+  require('./controllers/HomeController.js')
+  require('./controllers/TestController.js')
