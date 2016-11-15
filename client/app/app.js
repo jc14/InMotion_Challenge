@@ -9,9 +9,9 @@ angular.module('Site', ['ngRoute'])
         templateUrl: 'home.html',
         controller: 'HomeController'
       })
-      .when('/test', {
-        templateUrl: 'test.html',
-        controller: 'TestController'
+      .when('/movieEdit', {
+        templateUrl: 'movieEdit.html',
+        controller: 'MovieEditController'
       })
       .otherwise({
         redirectTo: '/'
@@ -21,5 +21,5 @@ angular.module('Site', ['ngRoute'])
   })
 
   // Controller init
-  require('./controllers/HomeController.js')
-  require('./controllers/TestController.js')
+  require('./controllers/HomeController.js');
+  require('./controllers/MovieEditController.js');

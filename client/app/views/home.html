@@ -1,5 +1,19 @@
-<div>
-  <p>
-    Hello! I am home. It is fun to be home!
-  </p>
+<div class="container-fluid">
+  <div class="row">
+    <span class="col-lg-1">Title</span>
+    <span class="col-lg-1">Year</span>
+    <span class="col-lg-1">Genre</span>
+    <span class="col-lg-1">Actors</span>
+    <span class="col-lg-1">Rating</span>
+    <a href="movieEdit">Add Movie</a>
+  </div>
+  <div ng-repeat="movie in movies">
+    <div class="row">
+      <span class="col-lg-1">{{movie.title}}</span>
+      <span class="col-lg-1">{{movie.year}}</span>
+      <span class="col-lg-1">{{movie.genre}}</span>
+      <span class="col-lg-1">{{movie.actors}}</span>
+      <span class="col-lg-1">{{movie.rating}}/10</span>
+    </div>
+  </div>
 </div>
