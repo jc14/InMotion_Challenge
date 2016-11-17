@@ -1,4 +1,12 @@
 let _ = require("lodash");
+_.getIndexBy = function (array, key, value) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i][key] === value) {
+      return i;
+    }
+  }
+  return -1;
+}
 
 angular.module("Site")
   .controller("MovieEditController", function($scope, $location) {
@@ -10,20 +18,33 @@ angular.module("Site")
     $scope.submit = function() {
 
       console.log($scope.movie)
-
+      // Grab movie's from local storage
       let movies = JSON.parse(localStorage.getItem('movies'));
 
-      if (!movies) movies = {};
+      // If movies doesn't exsist in the local storage then point movies to an empty array
+      if (!movies) movies = [];
 
-      movies[$scope.movie.title] = {
-        title: $scope.movie.title,
-        year: $scope.movie.year,
-        genre: $scope.movie.genre,
-        actors: $scope.movie.actors,
-        rating: $scope.movie.rating,
+      let index = _.getIndexBy(movies, "title", $scope.movie.title);
+      if (index !== -1) {
+        movies[index] = {
+          title: $scope.movie.title,
+          year: $scope.movie.year,
+          genre: $scope.movie.genre,
+          actors: $scope.movie.actors,
+          rating: $scope.movie.rating,
+        }
+      } else {
+        movies.push({
+          title: $scope.movie.title,
+          year: $scope.movie.year,
+          genre: $scope.movie.genre,
+          actors: $scope.movie.actors,
+          rating: $scope.movie.rating,
+        });
       }
-
+      // Put modified movies array into storage
       localStorage.setItem("movies", JSON.stringify(movies));
+      $scope.clearInputs();
     }
 
     $scope.clearInputs = function() {

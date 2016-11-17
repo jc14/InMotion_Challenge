@@ -1,7 +1,7 @@
 <table class="table">
   <div class="col-md-2">
     <label for="search">Search:</label>
-    <input type="text" value="" id="search">
+    <input type="text" ng-model="searchText" id="search">
   </div>
   <a href="movieEdit" class="col-md-2">Add Movie</a>
   <thead class="thead-default">
@@ -13,7 +13,7 @@
       <th class="col-md-2">Rating</th>
     </tr>
   </thead>
-  <tbody ng-repeat="movie in movies">
+  <tbody ng-repeat="movie in movies | filter:searchText">
     <tr>
       <td class="col-md-2">{{movie.title}}</td>
       <td class="col-md-2">{{movie.year}}</td>
