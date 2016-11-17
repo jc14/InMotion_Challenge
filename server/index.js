@@ -1,12 +1,9 @@
 var express     = require('express');
-var mongoose    = require('mongoose');
-var bodyParser  = require('body-parser');
 var _           = require('lodash');
 var path        = require('path');
 
 var app = express();
 
-app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '/../client/app/views')));
 
 app.get('/bundle.js', (req, res) => {
