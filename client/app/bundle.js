@@ -69,9 +69,8 @@ angular.module("Site")
       $location.path("/")
     }
 
+    // Will run on
     $scope.submit = function() {
-
-      console.log($scope.movie)
       // Grab movie's from local storage
       let movies = JSON.parse(localStorage.getItem('movies'));
 
