@@ -16,11 +16,11 @@
   </thead>
   <tbody ng-repeat="movie in movies | filter:searchText">
     <tr>
-        <td class="col-md-2" ng-click="editMovie(movie.title)">{{movie.title}}</td>
-        <td class="col-md-2" ng-click="editMovie(movie.title)">{{movie.year}}</td>
-        <td class="col-md-2" ng-click="editMovie(movie.title)">{{movie.genre}}</td>
-        <td class="col-md-2" ng-click="editMovie(movie.title)">{{movie.actors}}</td>
-        <td class="col-md-2" ng-click="editMovie(movie.title)">{{movie.rating}}/10</td>
+        <td class="col-md-2" ng-click="editMovie(movie.title)" style="cursor: pointer;">{{movie.title}}</td>
+        <td class="col-md-2" ng-click="editMovie(movie.title)" style="cursor: pointer;">{{movie.year}}</td>
+        <td class="col-md-2" ng-click="editMovie(movie.title)" style="cursor: pointer;">{{movie.genre}}</td>
+        <td class="col-md-2" ng-click="editMovie(movie.title)" style="cursor: pointer;">{{movie.actors}}</td>
+        <td class="col-md-2" ng-click="editMovie(movie.title)" style="cursor: pointer;">{{movie.rating}}/10</td>
       <td class="col-md-1"><input type="checkbox" ng-model="movie.toDelete"></td>
     </tr>
   </tbody>
