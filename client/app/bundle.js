@@ -34,10 +34,10 @@ angular.module("Site")
 
     $scope.editMovie = function(title) {
       if (title) {
-
-      } else {
-        $location.path('movieEdit')
+        localStorage.setItem("movieToEdit", title);
       }
+
+      $location.path('movieEdit')
     }
   })
 
@@ -92,12 +92,27 @@ angular.module("Site")
     }
 
     $scope.clearInputs = function() {
-      $scope.movie = {};
-      $scope.movie.year = 2016;
-      $scope.movie.rating = 5;
+      $scope.movie = {
+        year: 2016,
+        rating: 5,
+      };
     }
 
+    // Clearing inputs on open of this page
     $scope.clearInputs();
+    // Check to see if a movie has been selected to edit.
+    // If so then fill the inputs with that movie's data.
+    let titleToEdit = localStorage.getItem("movieToEdit");
+    if (titleToEdit) {
+
+      let movies = JSON.parse(localStorage.getItem('movies'));
+      let index = _.getIndexBy(movies, "title", titleToEdit);
+      let movie = movies[index];
+
+      $scope.movie = movie;
+
+      localStorage.removeItem("movieToEdit");
+    }
   })
 
 },{"lodash":10}],4:[function(require,module,exports){

@@ -11,15 +11,17 @@
       <th class="col-md-2">Genre</th>
       <th class="col-md-2">Actors</th>
       <th class="col-md-2">Rating</th>
+      <!-- <th class="col-md-1"><input type="button" value="Delete Selected"></th> -->
     </tr>
   </thead>
   <tbody ng-repeat="movie in movies | filter:searchText">
-    <tr>
+    <tr ng-click="editMovie(movie.title)">
       <td class="col-md-2">{{movie.title}}</td>
       <td class="col-md-2">{{movie.year}}</td>
       <td class="col-md-2">{{movie.genre}}</td>
       <td class="col-md-2">{{movie.actors}}</td>
       <td class="col-md-2">{{movie.rating}}/10</td>
+      <!-- <td class="col-md-1"><input type="checkbox" ></td> -->
     </tr>
   </tbody>
 </table>

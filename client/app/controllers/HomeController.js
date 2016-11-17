@@ -6,9 +6,9 @@ angular.module("Site")
 
     $scope.editMovie = function(title) {
       if (title) {
-
-      } else {
-        $location.path('movieEdit')
+        localStorage.setItem("movieToEdit", title);
       }
+
+      $location.path('movieEdit')
     }
   })
