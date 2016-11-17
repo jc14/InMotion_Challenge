@@ -1,19 +1,25 @@
-<div class="container-fluid">
-  <div class="row">
-    <span class="col-lg-1">Title</span>
-    <span class="col-lg-1">Year</span>
-    <span class="col-lg-1">Genre</span>
-    <span class="col-lg-1">Actors</span>
-    <span class="col-lg-1">Rating</span>
-    <a href="movieEdit">Add Movie</a>
+<table class="table">
+  <div class="col-md-2">
+    <label for="search">Search:</label>
+    <input type="text" value="" id="search">
   </div>
-  <div ng-repeat="movie in movies">
-    <div class="row">
-      <span class="col-lg-1">{{movie.title}}</span>
-      <span class="col-lg-1">{{movie.year}}</span>
-      <span class="col-lg-1">{{movie.genre}}</span>
-      <span class="col-lg-1">{{movie.actors}}</span>
-      <span class="col-lg-1">{{movie.rating}}/10</span>
-    </div>
-  </div>
-</div>
+  <a href="movieEdit" class="col-md-2">Add Movie</a>
+  <thead class="thead-default">
+    <tr>
+      <th class="col-md-2">Title</th>
+      <th class="col-md-2">Year</th>
+      <th class="col-md-2">Genre</th>
+      <th class="col-md-2">Actors</th>
+      <th class="col-md-2">Rating</th>
+    </tr>
+  </thead>
+  <tbody ng-repeat="movie in movies">
+    <tr>
+      <td class="col-md-2">{{movie.title}}</td>
+      <td class="col-md-2">{{movie.year}}</td>
+      <td class="col-md-2">{{movie.genre}}</td>
+      <td class="col-md-2">{{movie.actors}}</td>
+      <td class="col-md-2">{{movie.rating}}/10</td>
+    </tr>
+  </tbody>
+</table>

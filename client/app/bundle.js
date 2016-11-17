@@ -44,12 +44,44 @@ angular.module("Site")
   })
 
 },{"lodash":10}],3:[function(require,module,exports){
+let _ = require("lodash");
+
 angular.module("Site")
-  .controller("MovieEditController", function($scope, $http) {
-    console.log("Now I'm being ran!");
+  .controller("MovieEditController", function($scope, $location) {
+
+    $scope.cancel = function() {
+      $location.path("/")
+    }
+
+    $scope.submit = function() {
+
+      console.log($scope.movie)
+
+      let movies = JSON.parse(localStorage.getItem('movies'));
+
+      if (!movies) movies = {};
+
+      movies[$scope.movie.title] = {
+        title: $scope.movie.title,
+        year: $scope.movie.year,
+        genre: $scope.movie.genre,
+        actors: $scope.movie.actors,
+        rating: $scope.movie.rating,
+      }
+
+      localStorage.setItem("movies", JSON.stringify(movies));
+    }
+
+    $scope.clearInputs = function() {
+      $scope.movie = {};
+      $scope.movie.year = 2016;
+      $scope.movie.rating = 5;
+    }
+
+    $scope.clearInputs();
   })
 
-},{}],4:[function(require,module,exports){
+},{"lodash":10}],4:[function(require,module,exports){
 /**
  * @license AngularJS v1.5.8
  * (c) 2010-2016 Google, Inc. http://angularjs.org

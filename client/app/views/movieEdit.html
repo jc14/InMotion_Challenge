@@ -1,5 +1,28 @@
-<div>
-  <p>
-    I am a test!!!!
-  </p>
+<div class="container-fluid">
+  <div class="col-md-6 col-md-offset-3">
+    <h2>Add/Edit Movie</h2>
+  </div>
+  <form class="form-group col-md-6 col-md-offset-3" ng-submit="submit()">
+    <label>Title:</label>
+    <input ng-model="movie.title" type="text" class="form-control">
+
+    <label>Year:</label>
+    <input ng-model="movie.year" type="number" min="0" step="1" value="2016" class="form-control">
+
+    <label>Genre:</label>
+    <input ng-model="movie.genre" type="text" class="form-control">
+
+    <label>Actors:</label>
+    <input ng-model="movie.actors" type="text" class="form-control">
+    <span>Seperate actor's name by commas</span></br>
+
+    <label>Rating:</label>
+    <input ng-model="movie.rating" type="number" min="0" max="10" step="1" value="5" class="form-control">
+    <span>Rating out of 10</span></br>
+
+    <div class="">
+      <input type="button" value="Cancel" ng-click="cancel()">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
 </div>
